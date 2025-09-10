@@ -1,0 +1,12 @@
+server {
+	listen 80;
+	listen [::]:80;
+	listen 443;
+	listen [::]:443;
+	server_name messthaler.xyz;
+
+	location / {
+		root /var/www/messthaler.xyz;
+	}
+}
+
