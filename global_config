@@ -10,3 +10,7 @@ map $http_accept $webp_suffix{
     default "";
     "~*webp" ".webp";
 }
+
+map $upstream_http_cache_control $hdr_cache_control { # Used in default_config
+    '' "max-age=31536000";
+}
