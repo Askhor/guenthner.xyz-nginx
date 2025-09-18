@@ -1,6 +1,6 @@
-add_header X-Frame-Options "DENY";
+# add_header X-Frame-Options "DENY";
 add_header X-XSS-Protection "1; mode=block";
-add_header X-Content-Type-Options nosniff;
+# add_header X-Content-Type-Options nosniff;
 # add_header Referrer-Policy no-referrer;
 add_header Cross-Origin-Embedder-Policy unsafe-none;
 add_header Cross-Origin-Opener same-origin;
@@ -11,7 +11,7 @@ add_header Access-Control-Allow-Origin "*";
 add_header Strict-Transport-Security "max-age=63072000" always;
 # more_set_headers "Server: HITHERE";
 # QUIC headers:
-add_header Alt-Svc 'h3-23=":443"'; # Advertise that HTTP/3 is available
+add_header Alt-Svc 'h3=":443; ma=3600"'; # Advertise that HTTP/3 is available
 add_header QUIC-Status $http3;
 
 add_header Cache-Control $hdr_cache_control; # From global_config
