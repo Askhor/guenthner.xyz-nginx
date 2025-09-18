@@ -5,3 +5,8 @@ server {
 }
 
 proxy_cache_path /var/cache/nginx/ keys_zone=mycache:10m max_size=10g inactive=60m use_temp_path=off levels=1:2;
+
+map $http_accept $webp_suffix{
+    default "";
+    "~*webp" ".webp";
+}

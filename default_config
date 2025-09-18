@@ -37,11 +37,6 @@ ssl_session_cache shared:MozSSL:10m;  # about 40000 sessions
 # ssl_stapling on;
 # ssl_stapling_verify on;
 
-map $http_accept $webp_suffix{
-    default "";
-    "~*webp" ".webp";
-}
-
 error_page 400 /error/400;
 error_page 401 /error/401;
 error_page 403 /error/403;
