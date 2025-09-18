@@ -8,5 +8,7 @@ server {
 	location / {
 		root /var/www/messthaler.xyz;
 	}
+
+	include "sites-enabled/default_config";
 }
 

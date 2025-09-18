@@ -37,14 +37,6 @@ ssl_session_cache shared:MozSSL:10m;  # about 40000 sessions
 # ssl_stapling on;
 # ssl_stapling_verify on;
 
-server {
-	listen 80;
-
-	return 308 https://guenthner.xyz;
-}
-
-proxy_cache_path /var/cache/nginx/ keys_zone=mycache:10m max_size=10g inactive=60m use_temp_path=off levels=1:2;
-
 map $http_accept $webp_suffix{
     default "";
     "~*webp" ".webp";

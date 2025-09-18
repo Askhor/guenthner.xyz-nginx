@@ -47,19 +47,6 @@ server {
 		proxy_pass http://127.0.0.1:8000;
 	}
 
-	# location = /500.html {
-	# 	root /path/to/app/current/public;
-	#}
-
-	# upstream app_server {
-		# fail_timeout=0 means we always retry an upstream even if it failed
-	 	# to return a good HTTP response
-
-	 	# for UNIX domain socket setups
-		#server unix:/tmp/gunicorn.sock fail_timeout=0;
-
-	 	# for a TCP configuration
-	#	server localhost:8000 fail_timeout=0;
-	#}
+    include "sites-enabled/default_config";
 }
 
