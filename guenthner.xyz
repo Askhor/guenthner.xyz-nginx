@@ -38,12 +38,12 @@ server {
 
 		# Nginx kills these headers if caching is on :(
 		# If-Modified-Since If-Unmodified-Since If-None-Match If-Match Range If-Range
-		proxy_set_header If-Unmodified-Since $http_if_unmodified_since
-		proxy_set_header If-Modified-Since $http_if_modified_since
-		proxy_set_header If-None-Match $http_if_none_match
-		proxy_set_header If-Match $http_if_match
-		proxy_set_header Range $http_range
-		proxy_set_header If-Range $http_if_range
+		proxy_set_header If-Unmodified-Since $http_if_unmodified_since;
+		proxy_set_header If-Modified-Since $http_if_modified_since;
+		proxy_set_header If-None-Match $http_if_none_match;
+		proxy_set_header If-Match $http_if_match;
+		proxy_set_header Range $http_range;
+		proxy_set_header If-Range $http_if_range;
 
 		# we don't want nginx trying to do something clever with
 		# redirects, we set the Host: header above already.
