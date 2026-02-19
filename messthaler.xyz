@@ -1,11 +1,29 @@
 server {
-	listen 80;
+    listen 80;
 	listen [::]:80;
-	listen 443;
-	listen [::]:443;
+	listen 443 ssl;
+	listen [::]:443 ssl;
+	listen 443 quic reuseport;
+	listen [::]:443 quic reuseport;
+
 	server_name messthaler.xyz;
 
-	location / {
+	ssl_certificate     /etc/letsencrypt/live/messthaler.xyz-0001/fullchain.pem;
+	ssl_certificate_key /etc/letsencrypt/live/messthaler.xyz-0001/privkey.pem;
+
+    root /var/www/messthaler.xyz;
+
+    location / {
+		try_files "/text$uri";
+	}
+
+	location /images {
+		autoindex on;
+		root /var/www/messthaler.xyz;
+	}
+
+	location /documents {
+		autoindex on;
 		root /var/www/messthaler.xyz;
 	}
 
