@@ -11,18 +11,12 @@ server {
 
     root /var/www/messthaler.xyz;
 
-    location / {
-		 root /var/www/messthaler.xyz;
-	}
-
 	location /images {
 		autoindex on;
-		root /var/www/messthaler.xyz;
 	}
 
 	location /documents {
 		autoindex on;
-		root /var/www/messthaler.xyz;
 	}
 
 	include "sites-enabled/default_config";
