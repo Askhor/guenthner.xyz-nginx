@@ -19,9 +19,10 @@ server {
 		autoindex on;
 	}
 
-	location /messthaler-wulff {
-	    root /var/www/messthaler.xyz/projects/messthaler-wulff/documentation;
-	}
+    location /messthaler-wulff {
+        autoindex on;
+        root /var/www/messthaler.xyz/projects;
+    }
 
 	include "sites-enabled/default_config";
 }
