@@ -12,7 +12,7 @@ server {
     root /var/www/messthaler.xyz;
 
     location / {
-		try_files "/text$uri";
+		 root /var/www/messthaler.xyz;
 	}
 
 	location /images {
