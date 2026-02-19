@@ -3,8 +3,6 @@ server {
 	listen [::]:80;
 	listen 443 ssl;
 	listen [::]:443 ssl;
-	listen 443 quic reuseport;
-	listen [::]:443 quic reuseport;
 
 	server_name messthaler.xyz;
 
